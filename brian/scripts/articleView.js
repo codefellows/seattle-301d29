@@ -78,10 +78,54 @@ articleView.setTeasers = function() {
   });
 };
 
-$(document).ready(() => {
+articleView.initNewArticlePage = function() {
+  $('#articles').empty();
+  // empty removes all children compared oto remove which actually removes it
+  $('.tab-content').show();
+
+  $('#export-field').hide();
+  $('#article-json').on('focus', function() {
+    console.log(this);
+    console.log($(this));
+    $(this).select();
+    // this.select;
+  });
+
+  // On change of our new form create our json object
+  $('#new-form').on('change', 'input, textarea', articleView.create);
+}
+
+articleView.create = () => {
+  let article;
+
+  $('#articles').empty();
+  article = new Article({
+    title: $('#article-title').val(),
+    author: $('#article-author').val(),
+    body: $('#article-body').val(),
+    authorUrl: $('#article-author-url').val(),
+    category: $('#article-category').val(),
+    publishedOn: $('#Article-published:checked').length ? new Date() : null
+  });
+
+  $('#articles').append(article.toHtml());
+
+  $('pre code').each(function(i, block) {
+    console.log('index:', i);
+    hljs.highlightBlock(block);
+  })
+
+  $('#export-field').show();
+  $('#article-json').val(JSON.stringify(article) + ',');
+}
+
+articleView.initIndexPage = () => {
+  articles.forEach(article => $('#articles').append(article.toHtml()));
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
-})
+}
+
+
