@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sol. 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/styles/normalize.css">
+    <link rel="stylesheet" href="vendor/styles/icons.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
+
+    <!--
+    TODO: Add a script tag to hold the Handlebars template.
+      - Be sure to give it a meaningful id attribute.
+      - Move your old template structure to here. Remember that this template needs to have the same structure as the old one!
+      - Insert placeholder keys.
+      - If your object doesn't have values you need yet, you can add those properties in the model.
+    -->
+    <!-- <script id="article-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            {{publishStatus}}
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+    </script> -->
+  </head>
+  <body>
+    <header class="site-header clearfix">
+      <section class="heading-group-h1">
+        <h1>
+          Kilovolt Blog!
+        </h1>
+        <h2>The shocking power of static pages</h2>
+      </section>
+      <nav class="main-nav">
+        <div class="icon-menu"></div>
+        <ul>
+          <li class="tab" data-content="articles"><a href="#" class="icon-home"> Home</a></li>
+          <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
+          <li><a href="http://twitter.com/brookr" target="_blank" class="icon-twitter3"> Twitter</a></li>
+          <li><a href="http://github.com/brookr" target="_blank" class="icon-github"> GitHub</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <h1>New Article</h1>
+        <section>
+            <form id="articleForm">
+                <fieldset>
+                    <label for="title">Article Title: </label>
+                    <input type="text" name="title" minlength="2" placeholder="Article Title" required>
+                </fieldset>
+
+                <fieldset>
+                    <label for="body">Article Content: </label>
+                    <textarea name="body" rows="10" placeholder="Article Content" required></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <label for="author">Author's Name:</label>
+                    <input type="text" name="author" placeholder="Author's Name" required>
+                </fieldset>
+
+                <fieldset>
+                    <label for="authorUrl">Author's URL: </label>
+                    <input type="text" name="authorUrl" placeholder="Author's URL">
+                </fieldset>
+
+                <fieldset>
+                    <label for="category">Category: </label>
+                    <input type="text" name="category" placeholder="category">
+                </fieldset>
+
+                <fieldset>
+                    <label for="publishedOn">If your article is already published please check the box.</label>
+                    <input type="checkbox" name="publishedOn">
+                </fieldset>
+
+                <button id="articleFormButton" type="submit">Submit Your Article</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+      &copy; 2017 Code Fellows | Static Blog | Happy Ipsum!
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- DONE: Include Handlebars.JS from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="scripts/blogArticles.js"></script>
+    <script src="scripts/article.js"></script>
+    <script src="scripts/articleView.js"></script>
+  </body>
+</html>
