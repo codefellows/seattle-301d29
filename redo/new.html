@@ -57,32 +57,32 @@
             <form id="articleForm">
                 <fieldset>
                     <label for="title">Article Title: </label>
-                    <input type="text" name="title" minlength="2" placeholder="Article Title" required>
+                    <input type="text" id="formTitleInput" name="title" minlength="2" placeholder="Article Title" required>
                 </fieldset>
 
                 <fieldset>
                     <label for="body">Article Content: </label>
-                    <textarea name="body" rows="10" placeholder="Article Content" required></textarea>
+                    <textarea name="body" id="formBodyInput" rows="10" placeholder="Article Content" required></textarea>
                 </fieldset>
 
                 <fieldset>
                     <label for="author">Author's Name:</label>
-                    <input type="text" name="author" placeholder="Author's Name" required>
+                    <input type="text" name="author" id="formAuthorInput" placeholder="Author's Name" required>
                 </fieldset>
 
                 <fieldset>
                     <label for="authorUrl">Author's URL: </label>
-                    <input type="text" name="authorUrl" placeholder="Author's URL">
+                    <input type="text" name="authorUrl" id="formauthorUrlInput" placeholder="Author's URL">
                 </fieldset>
 
                 <fieldset>
                     <label for="category">Category: </label>
-                    <input type="text" name="category" placeholder="category">
+                    <input type="text" name="category" id="formCategoryInput"  placeholder="category">
                 </fieldset>
 
                 <fieldset>
                     <label for="publishedOn">If your article is already published please check the box.</label>
-                    <input type="checkbox" name="publishedOn">
+                    <input type="checkbox" id="formPublishedOnInput" name="publishedOn">
                 </fieldset>
 
                 <button id="articleFormButton" type="submit">Submit Your Article</button>
@@ -94,10 +94,10 @@
         </section>
         
         <section id="article-export">
-        <label id="export-field" for="article-json">
-            <input type="text" id="article-json" readonly>
-            <span>when done, copy the JSON from above</span>
-        </label>
+            <label id="export-field" for="article-json">
+                <input type="text" id="article-json" readonly>
+                <span>when done, copy the JSON from above</span>
+            </label>
         </section>
     </main>
     <footer>

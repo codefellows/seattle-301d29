@@ -80,6 +80,31 @@ articleView.setTeasers = function() {
 
 articleView.initNewArticlePage = function() {
   $('#articles').empty();
+  $('#export-field').hide();
+  $('#articleForm').on('change', 'input, textarea', articleView.create);
+}
+
+articleView.create = () => {
+  let article;
+  article = new Article({
+    title: $('#formTitleInput').val(),
+    category: $('#formCategoryInput').val(),
+    author: $('#formAuthorInput').val(),
+    authorUrl: $('#formAuthorUrlInput').val(),
+    publishedOn: $('#formPublishedOnInput').length ? new Date : null,
+    body: `<p>${$('#formBodyInput').val()}</p>`
+  });
+
+  $('#articles').empty();
+  $('#articles').append(article.toHtml());
+
+  $('pre code').each(function(i, block) {
+    console.log('index:', i);
+    hljs.highlightBlock(block);
+  })
+  
+  $('#export-field').show();
+  $('#article-json').val(JSON.stringify(article) + ',');
 }
 
 $(document).ready(() => {
