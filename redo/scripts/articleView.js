@@ -81,6 +81,11 @@ articleView.setTeasers = function() {
 articleView.initNewArticlePage = function() {
   $('#articles').empty();
   $('#export-field').hide();
+  $('#article-json').on('focus', function() {
+    console.log('this:', this);
+    console.log('$(this)', $(this));
+    this.select();
+  });
   $('#articleForm').on('change', 'input, textarea', articleView.create);
 }
 
@@ -102,7 +107,7 @@ articleView.create = () => {
     console.log('index:', i);
     hljs.highlightBlock(block);
   })
-  
+
   $('#export-field').show();
   $('#article-json').val(JSON.stringify(article) + ',');
 }
