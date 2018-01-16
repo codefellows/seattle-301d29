@@ -80,34 +80,27 @@ articleView.setTeasers = function() {
 
 articleView.initNewArticlePage = function() {
   $('#articles').empty();
-  // empty removes all children compared oto remove which actually removes it
-  $('.tab-content').show();
-
   $('#export-field').hide();
   $('#article-json').on('focus', function() {
-    console.log(this);
-    console.log($(this));
-    $(this).select();
-    // this.select;
+    console.log('this:', this);
+    console.log('$(this)', $(this));
+    this.select();
   });
-
-  // On change of our new form create our json object
-  $('#new-form').on('change', 'input, textarea', articleView.create);
+  $('#articleForm').on('change', 'input, textarea', articleView.create);
 }
 
 articleView.create = () => {
   let article;
-
-  $('#articles').empty();
   article = new Article({
-    title: $('#article-title').val(),
-    author: $('#article-author').val(),
-    body: $('#article-body').val(),
-    authorUrl: $('#article-author-url').val(),
-    category: $('#article-category').val(),
-    publishedOn: $('#Article-published:checked').length ? new Date() : null
+    title: $('#formTitleInput').val(),
+    category: $('#formCategoryInput').val(),
+    author: $('#formAuthorInput').val(),
+    authorUrl: $('#formAuthorUrlInput').val(),
+    publishedOn: $('#formPublishedOnInput').length ? new Date : null,
+    body: `<p>${$('#formBodyInput').val()}</p>`
   });
 
+  $('#articles').empty();
   $('#articles').append(article.toHtml());
 
   $('pre code').each(function(i, block) {
@@ -119,13 +112,10 @@ articleView.create = () => {
   $('#article-json').val(JSON.stringify(article) + ',');
 }
 
-articleView.initIndexPage = () => {
-  articles.forEach(article => $('#articles').append(article.toHtml()));
+$(document).ready(() => {
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
-}
-
-
+})
