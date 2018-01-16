@@ -78,6 +78,10 @@ articleView.setTeasers = function() {
   });
 };
 
+articleView.initNewArticlePage = function() {
+  $('#articles').empty();
+}
+
 $(document).ready(() => {
   articleView.populateFilters();
   articleView.handleCategoryFilter();
