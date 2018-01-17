@@ -35,7 +35,6 @@ ABCD:
 - [Star Wars API!](http://swapi.co/)
 
 - Key terms
-	- [WRRC](http://celineotter.azurewebsites.net/world-wide-web-http-request-response-cycle/) (Web Request Response Cycle)
 	- [URL](https://en.wikipedia.org/wiki/Uniform_Resource_Locator) vs. [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) (Uniform Resource Locator vs. Uniform Resource Identifier)
 	- [IP address](https://en.wikipedia.org/wiki/IP_address)
 	- [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) (Domain Name System)
