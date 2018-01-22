@@ -1,4 +1,4 @@
-![CF](https://i.imgur.com/7v5ASc8.png)  Class 11: Production & Deployment
+![CF](https://i.imgur.com/7v5ASc8.png)  Class 10: Production & Deployment
 =======
 
 ## Overview
