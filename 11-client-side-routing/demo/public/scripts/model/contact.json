@@ -1,0 +1,38 @@
+[
+  {
+    "id": 10,
+    "name": "brian",
+    "fav_num": 7,
+    "ninja": false 
+  },
+  {
+    "id": 20,
+    "name": "sammy",
+    "fav_num": 4,
+    "ninja": true 
+  },
+  {
+    "id": 30,
+    "name": "pumpkin",
+    "fav_num": 2,
+    "ninja": false 
+  },
+  {
+    "id": 40,
+    "name": "bob",
+    "fav_num": 9,
+    "ninja": true 
+  },
+  {
+    "id": 50,
+    "name": "chauncey",
+    "fav_num": 99,
+    "ninja": true 
+  },
+  {
+    "id": 60,
+    "name": "susan",
+    "fav_num": 13,
+    "ninja": false 
+  }
+]
